@@ -42,31 +42,155 @@ int main() {
 
 void print_statistics(unsigned char*ptr, unsigned int size){
 
+	int i;
+    unsigned char test1[size];
+    for(i=0;i<size;i++)
+    {
+        test1[i]=ptr[i];
+    }
+
+    int min,max,mean,median;
+
+    sort_array(test1, size);
+    min=find_minimum(test1,size);
+    max=find_maximum(test1,size);
+    mean=find_mean(test1,size);
+    median = find_median(test1,size);
+
+    printf("\n");
+    printf("sorted Array is: ");
+    for(int i=SIZE-1;i>=0;i--)
+    {
+        printf("%d ",test1[i]);
+    }
+
+    printf("\nMinimum is: %d",min);
+    printf("\nMaximum is: %d",max);
+    printf("\nMean is: %d",mean);
+    printf("\nMedian is: %d",median);
+
 }
+
+
 
 void print_array(unsigned char *ptr, unsigned int size){
 
+	int i;
+    printf("Given Array: ");
+
+    for(int i=0;i<size;i++)
+    {
+        printf("%d ",ptr[i]);
+    }
 }
 
 unsigned char find_minimum(unsigned char *ptr, unsigned int size) {
 
+	int i=0;
+    int min;
+    if(i==0)
+    		{
+        		min=*ptr;
+		}
+    while(i<size)
+    		{
+			if(*ptr<min)
+       			 {
+           			 min=*ptr;
+        			}
+
+        		i++;
+       		ptr++;
+		}
+    return min;
+
 }
+
 
 unsigned char find_maximum(unsigned char *ptr, unsigned int size){
 
+	int i=0;
+    int max;
+    if(i==0)
+    		{
+        		max=*ptr;
+		}
+    while(i<size)
+    		{
+			 if(*ptr>max)
+        			{
+           			 max=*ptr;
+       			 }
+
+       		 i++;
+        		ptr++;
+		}
+   	 return max;
 }
 
 unsigned char find_mean(unsigned char *ptr, unsigned int size){
 
-}
+	int i=0;
+    int mean=0;
 
-unsigned char find_median(unsigned char *ptr, unsigned int size){
+    if(ptr== NULL)
+    {
+        return 0;
+    }
+
+    if(size<=0)
+    {
+        size=1;
+    }
+
+    for(i=0;i<size;i++)
+    {
+        mean +=*ptr;
+        ptr++;
+    }
+
+    return (mean/size);
 
 }
 
 void sort_array(unsigned char *ptr, unsigned int size){
 
+	int i,j;
+    unsigned char temp;
+    for( i=1; i<size; i++ )
+    {
+        for( j=0; j<size-i; j++ )
+        {
+            if(*(ptr+j)>=*(ptr+j+1))
+            {
+                temp=*(ptr+j);
+                *(ptr+j)=*(ptr+j+1);
+                *(ptr+j+1)=temp;
+            }
+        }
+
+    }
+
+
 }
+
+unsigned char find_median(unsigned char *ptr, unsigned int size){
+
+  int med;
+  if(size%2==0)
+  {
+      med = (ptr[size/2]+ptr[(size/2)-1])/2;
+  }
+  else
+  {
+      med = ptr[size/2];
+  }
+
+
+  return med;
+
+}
+
 
 
 
