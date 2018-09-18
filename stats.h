@@ -9,32 +9,118 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <ststs.h>
+ * @brief <C programming file >
  *
- * <Add Extended Description Here>
+ * <Header file with function declerations and description of input and output parameters>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Krishna Chaitanya Tirumalaraju>
+ * @date <2018/09/15 >
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
-
+/* print_statistics() Declarations and Function Comments here */
+void print_statistics(unsigned char *ptr,unsigned int size);
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief <Prints the statistics of the Given array>
  *
- * <Add Extended Description Here>
+ * <This function prints all the statistics analyzed like Maximum, Minimum, mMean and Median
+ * of the given unsigned char array.>
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param <unsigned char *ptr>  Pointer to a data set
+ * @param <unsigned int size>   Size of the data set
+
  *
- * @return <Add Return Informaiton here>
+ * @return <Prints all the Statistics of the Data set>
  */
 
+void print_array(unsigned char *ptr, unsigned int size);
+/* print_Array() Declarations and Function Comments here */
+
+/**
+ * @brief <Prints the Given unsorted array>
+ *
+ * <This function prints the unsorted array.>
+ *
+ * @param <unsigned char *ptr>  Pointer to a data set
+ * @param <unsigned int size>   Size of the data set
+
+ *
+ * @return <Prints the Data set>
+ */
+
+unsigned char find_minimum(unsigned char *ptr, unsigned int size);
+/* find_minimum() Declarations and Function Comments here */
+
+/**
+ * @brief <Finds minimum in the given data set>
+ *
+ * <This function finds the minimum number in the given data set.>
+ *
+ * @param <unsigned char *ptr>  Pointer to a data set
+ * @param <unsigned int size>   Size of the data set
+
+ *
+ * @return <Returns the minimum char element in the given data set>
+ */
+unsigned char find_maximum(unsigned char *ptr, unsigned int size);
+/* find_maximum Declarations and Function Comments here */
+
+/**
+ * @brief <Finds maximum in the given data set>
+ *
+ * <This function finds the minimum number in the given data set>
+ *
+ * @param <unsigned char *ptr>  Pointer to a data set
+ * @param <unsigned int size>   Size of the data set
+
+ *
+ * @return <Returns the minimum char element in the given data set>
+ */
+unsigned char find_mean(unsigned char *ptr, unsigned int size);
+/* find_mean Declarations and Function Comments here */
+
+/**
+ * @brief <Finds mean of the given data set>
+ *
+ * <This function finds the mean of the given data set>
+ *
+ * @param <unsigned char *ptr>  Pointer to a data set
+ * @param <unsigned int size>   Size of the data set
+
+ *
+ * @return <Returns the mean of the given data set>
+ */
+unsigned char find_median(unsigned char *ptr, unsigned int size);
+/* find_median Declarations and Function Comments here */
+
+/**
+ * @brief <Finds median of the given data set>
+ *
+ * <This function finds the median of the given data set>
+ *
+ * @param <unsigned char *ptr>  Pointer to a data set
+ * @param <unsigned int size>   Size of the data set
+
+ *
+ * @return <Returns the median of the given data set>
+ */
+
+void sort_array(unsigned char *ptr, unsigned int size);
+/* sort_array Declarations and Function Comments here */
+
+/**
+ * @brief <Sorts the given data set from larger to smaller>
+ *
+ * <This function sorts the given data set from larger element first to smller element>
+ *
+ * @param <unsigned char *ptr>  Pointer to a data set
+ * @param <unsigned int size>   Size of the data set
+
+ *
+ * @return <Returns the data set which is sorted>
+ */
 
 #endif /* __STATS_H__ */
